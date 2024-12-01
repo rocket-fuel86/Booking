@@ -10,7 +10,7 @@ Customer::Customer(string n, int cID) : name(n), customerID(cID), currentBooking
 
 Customer::~Customer()
 {
-	// Без понятия
+	// Без понятия как (
 }
 
 void Customer::makeBooking(RoomBooking* booking)
