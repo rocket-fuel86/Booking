@@ -10,7 +10,11 @@ Customer::Customer(string n, int cID) : name(n), customerID(cID), currentBooking
 
 Customer::~Customer()
 {
-	// Без понятия как (
+	if (currentBooking != nullptr)
+	{
+		delete currentBooking;
+		currentBooking = nullptr;
+	}
 }
 
 void Customer::makeBooking(RoomBooking* booking)
@@ -25,7 +29,11 @@ void Customer::makeBooking(RoomBooking* booking)
 
 void Customer::cancelBooking()
 {
-	currentBooking = nullptr;
+	if (currentBooking != nullptr)
+	{
+		delete currentBooking;
+		currentBooking = nullptr;
+	}
 }
 
 void Customer::printCustomerInfo() const
